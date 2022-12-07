@@ -1,0 +1,65 @@
+body {
+    font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
+    background-color: rgb(231, 231, 231);
+}
+
+/*Header elements as well as authors*/
+header {
+    /*TODO:
+        Change size to percentage*/
+    text-align: center;
+    position: sticky;
+    background-color: lightblue;
+    border-radius: 12px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.main-website-title {
+    font-size: 48px;
+    margin: 0%;
+    padding: 5px 5px 0px 5px;
+}
+.authors {
+    font-size: 24px;
+    padding: 0px 5px 5px 5px;
+    margin: 0px 0px 10px 0px;
+}
+a.authors-links {
+    text-decoration: none;
+    transition: 0.15s;
+    color: rgb(61, 61, 61);
+}
+a.authors-links:visited {
+    text-decoration: none;
+}
+a.authors-links:hover {
+    color:aliceblue;
+}
+a.authors-links:active {
+    text-decoration: none;
+}
+
+/*Upload Image of Fruit button*/
+.image-button-container{ /*the div for the button*/
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.image-upload-container-button { /*the button itself*/
+    /*TODO:
+        Change size to percentage*/
+    border: 0px;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+button.image-upload-container-button:hover {
+    background-color: rgb(255, 200, 100);
+}

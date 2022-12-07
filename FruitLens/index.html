@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Test Website</title>
+    <title>FruitLens</title>
+    <link rel="shortcut icon" type="image/png" href = "Images/pear.png">
+    <link rel="stylesheet" type="text/css" href="CSS/index.css">
   </head>
   <body>
-    <header></header>
+    <header>
+      <h1 class = "main-website-title"><strong>FruitLens</strong></h1> <!--Link this to the github repository-->
+      <h4 class = "authors">By <a href = "https://www.jsanchezroa.umasscreate.net" class = "authors-links">Juan Sanchez Roa</a> and <a href = "#" class = "authors-links">Ryan Nguyen</a></h4>
+    </header>
     <main>
-      <strong>This is example text</strong>
+      <div class="image-button-container">
+        <button class = "image-upload-container-button">Upload Image of Fruit</button>
+      </div>
+      <div class = "image-upload-container">
+        <div class = "image-upload-button">
+          <label for = "image-upload">Upload Image</label>
+          <input type = "file" id = "image-upload" accept = "image/*" capture = "environment">
+        </div>
+        <p>OR</p>
+        <div class = "image-upload-url-container">
+          <input type = "url" placeholder = "Enter URL (ex: https://www.image.jpg)">
+        </div>
+      </div>
     </main>
     <script src="Javascript/main.js"></script>   
-    <footer></footer>
+    <footer>
+      <div class = "about-section">
+        <button id = "about-section-button">
+          <strong>About this Project</strong>
+        </button>
+        <section class = "about-section-container"> <!--Maybe make id instead of class?-->
+          <div id = "connect-container">
+            <p>Connect with us</p>
+          </div>
+          <div id = "description-container">
+            <p>Quick Description</p>
+          </div>
+          <div id = "resources-container">
+            <p>Resources used</p>
+          </div>
+        </section>
+      </div>
+    </footer>
   </body>
 </html>
