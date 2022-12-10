@@ -4,6 +4,8 @@
     <title>FruitLens</title>
     <link rel="shortcut icon" type="image/png" href = "Images/pear.png">
     <link rel="stylesheet" type="text/css" href="CSS/index.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <header>
@@ -13,15 +15,20 @@
     <main>
       <div class="image-button-container">
         <button class = "image-upload-container-button">Upload Image of Fruit</button>
-      </div>
-      <div class = "image-upload-container">
-        <div class = "image-upload-button">
-          <label for = "image-upload">Upload Image</label>
-          <input type = "file" id = "image-upload" accept = "image/*" capture = "environment">
-        </div>
-        <p>OR</p>
-        <div class = "image-upload-url-container">
-          <input type = "url" placeholder = "Enter URL (ex: https://www.image.jpg)">
+        <!--Possibly change to a Form instead-->
+        <div class = "image-upload-container">
+          <div class = "image-upload-button">
+            <label for = "image-upload" class = "image-upload-label">
+              <img src = "Images/upload.png" width = 50% alt = "upload icon"></image><br>
+              Upload Image
+            </label>
+            <input type = "file" id = "image-upload" accept = "image/*" capture = "environment">
+          </div>
+          <p id="image-upload-conatiner-or">OR</p>
+          <div class = "image-upload-url-container">
+            <input type = "url" id = "image-upload-url-input" placeholder = "Enter URL (ex: https://www.image.jpg)">
+            <button type = "submit" class="image-url-submit-button">Submit</button>
+          </div>
         </div>
       </div>
     </main>

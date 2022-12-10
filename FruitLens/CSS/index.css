@@ -1,6 +1,7 @@
 body {
     font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
     background-color: rgb(231, 231, 231);
+    margin: 0px;
 }
 
 /*Header elements as well as authors*/
@@ -9,8 +10,9 @@ header {
         Change size to percentage*/
     text-align: center;
     position: sticky;
+    top: 0px;
     background-color: lightblue;
-    border-radius: 12px;
+    border-radius: 0px 0px 12px 12px;
     box-sizing: border-box;
     width: 100%;
 }
@@ -21,7 +23,7 @@ header {
 }
 .authors {
     font-size: 24px;
-    padding: 0px 5px 5px 5px;
+    padding: 0px 5px 10px 5px;
     margin: 0px 0px 10px 0px;
 }
 a.authors-links {
@@ -45,8 +47,6 @@ a.authors-links:active {
     margin-bottom: 10%;
 }
 .image-upload-container-button { /*the button itself*/
-    /*TODO:
-        Change size to percentage*/
     border: 0px;
     display: block;
     margin-top: 20px;
@@ -59,7 +59,78 @@ a.authors-links:active {
     color: black;
     font-weight: bold;
     transition: 0.3s;
+    font-size: 150%;
 }
 button.image-upload-container-button:hover {
+    background-color: rgb(255, 200, 100);
+}
+
+.image-upload-container {
+    background-color: lightgray;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* Properties borrowed from "Styling & Customizing File Inputs the Smart Way" */
+#image-upload {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.image-upload-label {
+    text-align: center;
+    border: 2px dashed black;
+    border-radius: 12px;
+    background-color: darkgray;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 130%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    transition: 0.3s;
+}
+label.image-upload-label:hover {
+    background-color: rgb(212, 212, 212);
+    cursor: pointer;
+}
+
+#image-upload-conatiner-or {
+    text-align: center;
+    font-weight: bold;
+    font-size: 130%
+}
+
+.image-upload-url-container{
+    display:flex;
+    justify-content: flex-start;
+}
+#image-upload-url-input{
+    border: none;
+    border-radius: 12px 0px 0px 12px;
+    padding: 10px;
+    display: block;
+    flex-grow: 10;
+}
+.image-url-submit-button {
+    border: none;
+    border-radius: 0px 12px 12px 0px;
+    background-color: orange;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 110%;
+    padding: 10px;
+    flex-grow: 1;
+    transition: 0.3s;
+}
+button.image-url-submit-button:hover {
     background-color: rgb(255, 200, 100);
 }
