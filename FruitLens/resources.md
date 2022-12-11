@@ -10,3 +10,5 @@
 [Upload Icon](https://www.flaticon.com/free-icon/upload_126477)
 
 [An Interactive Guide to Flexbox](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox)
+
+[Down Arrow Icon](https://www.flaticon.com/free-icon/down-arrow_152415?term=drop%20down&page=1&position=11&page=1&position=11&related_id=152415&origin=tag)

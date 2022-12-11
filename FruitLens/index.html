@@ -10,7 +10,8 @@
   <body>
     <header>
       <h1 class = "main-website-title"><strong>FruitLens</strong></h1> <!--Link this to the github repository-->
-      <h4 class = "authors">By <a href = "https://www.jsanchezroa.umasscreate.net" class = "authors-links">Juan Sanchez Roa</a> and <a href = "#" class = "authors-links">Ryan Nguyen</a></h4>
+      <!--Change to h2-->
+      <h4 class = "authors">By <a href = "https://www.github.com/StuffGames" class = "authors-links">Juan Sanchez Roa</a> and <a href = "https://github.com/ryannn1403" class = "authors-links">Ryan Nguyen</a></h4>
     </header>
     <main>
       <div class="image-button-container">
@@ -30,23 +31,51 @@
             <button type = "submit" class="image-url-submit-button">Submit</button>
           </div>
         </div>
+        <div class = "image-upload-container">
+          <div id="image-preview-container">
+            <img alt = "Image Preview">
+          </div>
+          <div class="image-preview-buttons-container">
+            <button class="image-preview-buttons" id="upload-new-image-button">Upload New Image</button>
+            <button class="image-preview-buttons" id="submit-preview-image-button">Identify Fruit</button>
+          </div>
+        </div>
       </div>
     </main>
     <script src="Javascript/main.js"></script>   
     <footer>
       <div class = "about-section">
-        <button id = "about-section-button">
-          <strong>About this Project</strong>
-        </button>
+        <div class = "about-section-button-container">
+          <button id = "about-section-button">
+            <strong>About This Project</strong><br>
+            <img src = "Images/down-arrow.png" id = "down-arrow-image" alt = "Down Arrow Icon" width = "5%" style="padding-top:5px">
+          </button>
+        </div>
         <section class = "about-section-container"> <!--Maybe make id instead of class?-->
-          <div id = "connect-container">
-            <p>Connect with us</p>
+          <div class="about-section-contents" id = "connect-container">
+            <h3><strong>Connect With Us</strong></h3>
+            <p>
+              This project was created by Juan Sanchez Roa and Ryan Nguyen.
+              You can find out more about us through our websites and GitHub links.
+              Here are other links which you can check out as well.
+            </p>
           </div>
-          <div id = "description-container">
-            <p>Quick Description</p>
+          <div class="about-section-contents" id = "description-container">
+            <h3><strong>Description of Project</strong></h3>
+            <p>
+              This project takes in an input of an image and uses machine learning technology to indentify what fruit is being displayed.
+              Juan took the approach of creating the front end development by creating the website and its functionality.
+              Ryan decided on coding and training a machine learning model that would run in the back end to identify whatever picture it got sent.
+            </p>
           </div>
-          <div id = "resources-container">
-            <p>Resources used</p>
+          <div class="about-section-contents" id = "resources-container">
+            <h3><strong>Resources Used</strong></h3>
+            <p>
+              This was our first project using the kind of technologies that we had available to us.
+              For this reason we had to reference many sites for documentation and guidance.
+              Here we will include a list of some sites, videos, or images we used to create the project,
+              whether it was icon images, a quick tutorial, or an in depth article on specific tools used.
+            </p>
           </div>
         </section>
       </div>

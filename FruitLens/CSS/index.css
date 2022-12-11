@@ -65,17 +65,21 @@ button.image-upload-container-button:hover {
     background-color: rgb(255, 200, 100);
 }
 
+/* Upload and Preview Image Div */
 .image-upload-container {
     background-color: lightgray;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
     width: fit-content;
     border-radius: 12px;
     padding: 20px;
 }
 
 /* Properties borrowed from "Styling & Customizing File Inputs the Smart Way" */
+/* Image File Upload Label + Button */
+/* hide later */
 #image-upload {
     width: 0.1px;
 	height: 0.1px;
@@ -103,12 +107,14 @@ label.image-upload-label:hover {
     cursor: pointer;
 }
 
+/* OR text in the div */
 #image-upload-conatiner-or {
     text-align: center;
     font-weight: bold;
     font-size: 130%
 }
 
+/* Upload Image URL */
 .image-upload-url-container{
     display:flex;
     justify-content: flex-start;
@@ -133,4 +139,70 @@ label.image-upload-label:hover {
 }
 button.image-url-submit-button:hover {
     background-color: rgb(255, 200, 100);
+}
+
+/* Preview Image */
+#image-preview-container {
+    margin-bottom: 20px;
+}
+.image-preview-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 4px;
+    gap: 12px;
+}
+.image-preview-buttons {
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 105%;
+    padding: 15px;
+    transition: 0.3s;
+}
+#upload-new-image-button {
+    background-color: darkgray;
+}
+button#upload-new-image-button:hover {
+    background-color: rgb(231, 231, 231);
+}
+#submit-preview-image-button {
+    background-color: orange;
+}
+button#submit-preview-image-button:hover {
+    background-color: rgb(255, 200, 100);
+}
+
+/*Footer*/
+/*.aboutsection{
+    background-color: darkgray;
+}*/
+#about-section-button {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 50px;
+    background-color: inherit;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 120%;
+    transition: 0.3s;
+}
+button#about-section-button:hover {
+    background-color: darkgray;
+}
+/* Probably for scripting, change background color of div when button hover*/
+
+.about-section-container {
+    display:flex;
+    gap: 10px;
+    background-color: darkgray;
+    justify-content: space-around;
+}
+
+/* Possibly change width or flex-grow of each div in the section container to fix sizing*/
+
+.about-section-contents {
+    padding: 10px;
 }
