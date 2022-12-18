@@ -9,35 +9,41 @@
   </head>
   <body>
     <header>
-      <h1 class = "main-website-title"><strong>FruitLens</strong></h1> <!--Link this to the github repository-->
-      <!--Change to h2-->
-      <h4 class = "authors">By <a href = "https://www.github.com/StuffGames" class = "authors-links">Juan Sanchez Roa</a> and <a href = "https://github.com/ryannn1403" class = "authors-links">Ryan Nguyen</a></h4>
+      <h1 class = "main-website-title">
+        <a href = "https://github.com/StuffGames/FruitLens" id="fruitlens-link" target="_">
+          <strong>FruitLens</strong>
+        </a>
+      </h1>
+      <h2 class = "authors">
+        By <a href = "https://www.github.com/StuffGames" class = "authors-links">Juan Sanchez Roa</a>
+         and <a href = "https://github.com/ryannn1403" class = "authors-links">Ryan Nguyen</a>
+      </h2>
     </header>
     <main>
       <div class="image-button-container">
-        <button class = "image-upload-container-button">Upload Image of Fruit</button>
+        <button id = "image-upload-container-button" class="orange-button" type="button">Upload Image of Fruit</button>
         <!--Possibly change to a Form instead-->
-        <div class = "image-upload-container">
+        <div class = "image-upload-container" id="upload-image">
           <div class = "image-upload-button">
             <label for = "image-upload" class = "image-upload-label">
               <img src = "Images/upload.png" width = 50% alt = "upload icon"></image><br>
               Upload Image
             </label>
-            <input type = "file" id = "image-upload" accept = "image/*" capture = "environment">
+            <input type = "file" id = "image-upload" accept = "image/*">
           </div>
           <p id="image-upload-conatiner-or">OR</p>
           <div class = "image-upload-url-container">
             <input type = "url" id = "image-upload-url-input" placeholder = "Enter URL (ex: https://www.image.jpg)">
-            <button type = "submit" class="image-url-submit-button">Submit</button>
+            <button type = "submit" id="image-url-submit-button" class="orange-button">Submit</button>
           </div>
         </div>
-        <div class = "image-upload-container">
+        <div class = "image-upload-container" id="image-preview">
           <div id="image-preview-container">
-            <img alt = "Image Preview">
+            <img id="preview-image" alt = "Image Preview" src="">
           </div>
           <div class="image-preview-buttons-container">
-            <button class="image-preview-buttons" id="upload-new-image-button">Upload New Image</button>
-            <button class="image-preview-buttons" id="submit-preview-image-button">Identify Fruit</button>
+            <button class="image-preview-buttons" id="upload-new-image-button" type="button">Upload New Image</button>
+            <button class="image-preview-buttons" id="submit-preview-image-button" type="button">Identify Fruit</button>
           </div>
         </div>
       </div>
@@ -46,9 +52,9 @@
     <footer>
       <div class = "about-section">
         <div class = "about-section-button-container">
-          <button id = "about-section-button">
+          <button class="about-section-button-class" id = "about-section-button" type="button">
             <strong>About This Project</strong><br>
-            <img src = "Images/down-arrow.png" id = "down-arrow-image" alt = "Down Arrow Icon" width = "5%" style="padding-top:5px">
+            <img src = "Images/down-arrow.png" id = "down-arrow-image" alt = "Down Arrow Icon">
           </button>
         </div>
         <section class = "about-section-container"> <!--Maybe make id instead of class?-->

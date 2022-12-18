@@ -21,6 +21,20 @@ header {
     margin: 0%;
     padding: 5px 5px 0px 5px;
 }
+a#fruitlens-link {
+    text-decoration: none;
+    transition: 0.15s;
+    color:inherit;
+}
+a#fruitlens-link:visited {
+    text-decoration: none;
+}
+a#fruitlens-link:hover {
+    color:aliceblue;
+}
+a#fruitlens-link:active {
+    text-decoration: none;
+}
 .authors {
     font-size: 24px;
     padding: 0px 5px 10px 5px;
@@ -46,7 +60,7 @@ a.authors-links:active {
     margin-top: 10%;
     margin-bottom: 10%;
 }
-.image-upload-container-button { /*the button itself*/
+#image-upload-container-button { /*the button itself*/
     border: 0px;
     display: block;
     margin-top: 20px;
@@ -61,11 +75,19 @@ a.authors-links:active {
     transition: 0.3s;
     font-size: 150%;
 }
-button.image-upload-container-button:hover {
+button#image-upload-container-button:hover {
     background-color: rgb(255, 200, 100);
+}
+button#image-upload-container-button:active {
+    background-color: rgb(255, 184, 54);
 }
 
 /* Upload and Preview Image Div */
+#upload-image {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
 .image-upload-container {
     background-color: lightgray;
     display: block;
@@ -79,7 +101,6 @@ button.image-upload-container-button:hover {
 
 /* Properties borrowed from "Styling & Customizing File Inputs the Smart Way" */
 /* Image File Upload Label + Button */
-/* hide later */
 #image-upload {
     width: 0.1px;
 	height: 0.1px;
@@ -126,7 +147,7 @@ label.image-upload-label:hover {
     display: block;
     flex-grow: 10;
 }
-.image-url-submit-button {
+#image-url-submit-button {
     border: none;
     border-radius: 0px 12px 12px 0px;
     background-color: orange;
@@ -137,13 +158,25 @@ label.image-upload-label:hover {
     flex-grow: 1;
     transition: 0.3s;
 }
-button.image-url-submit-button:hover {
+button#image-url-submit-button:hover {
     background-color: rgb(255, 200, 100);
+}
+button#image-url-submit-button:active {
+    background-color: rgb(255, 184, 54);
 }
 
 /* Preview Image */
+#image-preview {
+    display: none;
+}
 #image-preview-container {
     margin-bottom: 20px;
+}
+#preview-image {
+    border-radius: 10px;
+    display: block;
+    margin: 0px auto 0px auto;
+    width: 100%;
 }
 .image-preview-buttons-container {
     display: flex;
@@ -177,6 +210,10 @@ button#submit-preview-image-button:hover {
 /*.aboutsection{
     background-color: darkgray;
 }*/
+footer {
+    position: static;
+    bottom: 0px;
+}
 #about-section-button {
     display:block;
     margin-left: auto;
@@ -184,7 +221,7 @@ button#submit-preview-image-button:hover {
     border: none;
     border-radius: 50px;
     background-color: inherit;
-    padding: 15px;
+    padding: 10px 20px 0px 20px;
     font-family: inherit;
     font-size: 120%;
     transition: 0.3s;
@@ -192,10 +229,14 @@ button#submit-preview-image-button:hover {
 button#about-section-button:hover {
     background-color: darkgray;
 }
+#down-arrow-image {
+    padding-top: 5px;
+    width: 25px;
+}
 /* Probably for scripting, change background color of div when button hover*/
 
 .about-section-container {
-    display:flex;
+    display:none; /*flex*/
     gap: 10px;
     background-color: darkgray;
     justify-content: space-around;

@@ -12,3 +12,13 @@
 [An Interactive Guide to Flexbox](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox)
 
 [Down Arrow Icon](https://www.flaticon.com/free-icon/down-arrow_152415?term=drop%20down&page=1&position=11&page=1&position=11&related_id=152415&origin=tag)
+
+[Toggle Visibility When Hiding Elements](https://css-tricks.com/snippets/css/toggle-visibility-when-hiding-elements/)
+
+[input type="file"](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file)
+
+[How do I remove a file from the FileList](https://stackoverflow.com/questions/3144419/how-do-i-remove-a-file-from-the-filelist)
+
+[HTML footer navigation button](https://stackoverflow.com/questions/62669043/html-footer-navigation-button)
+
+MDN Web Docs, W3Schools, and GeeksForGeeks
