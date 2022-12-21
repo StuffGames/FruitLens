@@ -4,6 +4,8 @@ const uploadFruitStartButton = document.querySelector("#image-upload-container-b
 const uploadImageInput = document.querySelector("#image-upload");
 // Upload Image Label
 const uploadImageLabel = document.querySelector(".image-upload-label");
+// Image URL Input
+const urlImageInput = document.querySelector("#image-upload-url-input");
 // Image URL Submit Button
 const urlSubmitButton = document.querySelector("#image-url-submit-button");
 // Upload New Image Button
@@ -39,6 +41,7 @@ function CheckInputSize(list) {
 
 // Move to Image preview, return true if successful, return false if error occurred
 function AdvanceToImagePreview(file) {
+    console.log('Entered a file');
     const acceptableFiles = ['image/png', 'image/jpg'];
     inputImage = file;
 
@@ -53,8 +56,24 @@ function AdvanceToImagePreview(file) {
     imagePreviewContainer.style.display = "block";
 
     imagePreviewContainer.children[0].children[0].src = inputImageURL;
+    urlImageInput.value = '';
 
     return true;
+}
+// Move To Image preview using url
+function AdvanceToImagePreviewURL(url) {
+    // Turn off current div and turn on next div
+    console.log('Entered a URL');
+
+    // TODO:
+    //      Create a Promise to handle image load failures
+    //      https://stackoverflow.com/questions/9815762/detect-when-an-image-fails-to-load-in-javascript
+    imagePreviewContainer.children[0].children[0].src = url;
+
+    uploadImageContainer.style.display = "none";
+    imagePreviewContainer.style.display = "block";
+
+    urlImageInput.value = '';
 }
 
 // Event for "Upload Image of Fruit" button
@@ -104,15 +123,27 @@ newImageButton.addEventListener('mouseup', () => {
     // Sets value to empty, making the input have to create a new empty FileList when called
     // This way you can reinput the same image
     uploadImageInput.value = '';
+    // Clear the URL Input
+    urlImageInput.value = '';
 });
 
-// TODO
-//      Create an event for the submit button, maybe also the input field
-//      See if fetching the image from the URL is successful
-//          If not send an alert and clear the text input
-//          If success then continue to next step with the URL
-//              maybe create a file from the image...
+submitImageButton.addEventListener('mouseup', () => {
+    imagePreviewContainer.style.display = 'none';
+    alert('IN CONSTRUCTION (pretend like the image is being processed right now');
+});
 
+
+urlSubmitButton.addEventListener('mouseup', () => {
+    // TODO: Implement regular expression to check if the value
+    //          is a valid url format before creating a file
+    const url = urlImageInput.value;
+    if (url.length <= 0) return;
+    // TODO:
+    //      Find a way to fetch an image file to a website (not necessarily javascript)
+    //      Then somehow transfer that file to javascript and authenticate it before moving forward
+
+    AdvanceToImagePreviewURL(url);
+});
 
 // TODO
 //      Make the whole DIV for the About Section Button change color only when hovering over the Button

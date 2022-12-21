@@ -21,4 +21,8 @@
 
 [HTML footer navigation button](https://stackoverflow.com/questions/62669043/html-footer-navigation-button)
 
+[Javascript: Load an Image from url and display](https://stackoverflow.com/questions/17634019/javascript-load-an-image-from-url-and-display)
+
+[Detect when an image fails to load in JavaScript](https://stackoverflow.com/questions/9815762/detect-when-an-image-fails-to-load-in-javascript)
+
 MDN Web Docs, W3Schools, and GeeksForGeeks
