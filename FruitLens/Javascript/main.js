@@ -12,6 +12,10 @@ const urlSubmitButton = document.querySelector("#image-url-submit-button");
 const newImageButton = document.querySelector("#upload-new-image-button");
 // Identify Fruit Button, moves to next step of the process
 const submitImageButton = document.querySelector("#submit-preview-image-button");
+// Upload Other Image Button (Button for a new image at the final results step)
+const otherImageButton = document.querySelector("#final-new-image-button");
+// Final Result Image
+const finalResultImage = document.querySelector("#final-result-image");
 // About Section Container (contains the paragraphs)
 const aboutSectionContainer = document.querySelector(".about-section-container");
 // About Section Button
@@ -21,6 +25,8 @@ const aboutSectionButton = document.querySelector("#about-section-button");
 const uploadImageContainer = document.querySelector("#upload-image");
 // Div Container that holds the image previewing step
 const imagePreviewContainer = document.querySelector("#image-preview");
+// Div Container that holds the final identification results
+const finalResultsContainer = document.querySelector(".identification-result-container");
 
 // Holds current inputted image
 let inputImage = null;
@@ -39,6 +45,16 @@ function CheckInputSize(list) {
     return true;
 }
 
+//Validate if the image url loads properly
+function validateImageURL(url, imageElement) {
+    return new Promise( (resolve, reject) => {
+        imageElement.addEventListener('load', () => resolve(this));
+        imageElement.addEventListener('error', (event) => reject(event));
+
+        imageElement.src = url;
+    } );
+}
+
 // Move to Image preview, return true if successful, return false if error occurred
 function AdvanceToImagePreview(file) {
     console.log('Entered a file');
@@ -55,7 +71,10 @@ function AdvanceToImagePreview(file) {
     uploadImageContainer.style.display = "none";
     imagePreviewContainer.style.display = "block";
 
+    // image preview image element
     imagePreviewContainer.children[0].children[0].src = inputImageURL;
+
+    // URL input field for image url
     urlImageInput.value = '';
 
     return true;
@@ -65,15 +84,22 @@ function AdvanceToImagePreviewURL(url) {
     // Turn off current div and turn on next div
     console.log('Entered a URL');
 
-    // TODO:
-    //      Create a Promise to handle image load failures
-    //      https://stackoverflow.com/questions/9815762/detect-when-an-image-fails-to-load-in-javascript
-    imagePreviewContainer.children[0].children[0].src = url;
+    const previewImageElement = imagePreviewContainer.children[0].children[0];
 
-    uploadImageContainer.style.display = "none";
-    imagePreviewContainer.style.display = "block";
-
-    urlImageInput.value = '';
+    validateImageURL(url, previewImageElement).then((img) => {
+        console.log('Image URL is valid, proceeding with next step', img);
+        inputImageURL = url;
+    
+        uploadImageContainer.style.display = "none";
+        imagePreviewContainer.style.display = "block";
+    
+        urlImageInput.value = '';
+    }, (event) => {
+        console.log(event);
+        alert("That URL is invalid"); // Probably change to text on screen
+        urlImageInput.value = '';
+        inputImageURL = '';
+    });
 }
 
 // Event for "Upload Image of Fruit" button
@@ -127,12 +153,21 @@ newImageButton.addEventListener('mouseup', () => {
     urlImageInput.value = '';
 });
 
-submitImageButton.addEventListener('mouseup', () => {
+// Event for submitting current image that is being previewed
+submitImageButton.addEventListener('mouseup', () => {   
+
+    finalResultImage.src = inputImageURL;
+
     imagePreviewContainer.style.display = 'none';
-    alert('IN CONSTRUCTION (pretend like the image is being processed right now');
+    /*Take back identified fruit and display it in the next div*/
+
+    const fruitResultText = document.querySelector("#identified-fruit-text");
+    fruitResultText.textContent = 'PLACEHOLDER';
+
+    finalResultsContainer.style.display = 'block';
 });
 
-
+// Event for submitting the URL field
 urlSubmitButton.addEventListener('mouseup', () => {
     // TODO: Implement regular expression to check if the value
     //          is a valid url format before creating a file
@@ -145,13 +180,36 @@ urlSubmitButton.addEventListener('mouseup', () => {
     AdvanceToImagePreviewURL(url);
 });
 
-// TODO
-//      Make the whole DIV for the About Section Button change color only when hovering over the Button
-//      Possibly add transition to it the same way the button does
+// Event for when changing to another image
+otherImageButton.addEventListener('mouseup', () => {
+    finalResultsContainer.style.display = 'none';
+    
+    const fruitResultText = document.querySelector("#identified-fruit-text");
+    fruitResultText.textContent = '';
+
+    finalResultImage.src = '';
+
+    // Sets value to empty, making the input have to create a new empty FileList when called
+    // This way you can reinput the same image
+    uploadImageInput.value = '';
+    // Clear the URL Input
+    urlImageInput.value = '';
+
+    uploadImageContainer.style.display = 'block';
+});
 
 // Event For "About Section" Button
 let aboutSectionActive = false;
 aboutSectionButton.addEventListener('mouseup', () => {
     aboutSectionContainer.style.display = aboutSectionActive ? "none" : "flex";
     aboutSectionActive = aboutSectionActive ? false : true;
-})
+});
+// Event for changing background while hovering over only the button
+const aboutSectionButtonContainer = document.querySelector(".about-section-button-container");
+aboutSectionButton.addEventListener('mouseenter', () => {
+    aboutSectionButtonContainer.classList.add('hover-background');
+});
+aboutSectionButton.addEventListener('mouseleave', () => {
+    if (aboutSectionActive) return;
+    aboutSectionButtonContainer.classList.remove('hover-background');
+});

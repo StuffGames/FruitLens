@@ -6,8 +6,6 @@ body {
 
 /*Header elements as well as authors*/
 header {
-    /*TODO:
-        Change size to percentage*/
     text-align: center;
     position: sticky;
     top: 0px;
@@ -206,6 +204,40 @@ button#submit-preview-image-button:hover {
     background-color: rgb(255, 200, 100);
 }
 
+/*Final Indentification Result*/
+.identification-result-container {
+    display: none;
+    margin-bottom: 10%;
+}
+#identified-fruit-text {
+    font-family: inherit;
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#final-result-image {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10%;
+    width: fit-content;
+}
+#final-new-image-button {
+    border: none;
+    border-radius: 8px;
+    display: block;
+    padding: 20px;
+    font-size: 120%;
+    font-weight: bold;
+    margin: 0px auto 0px auto;
+    transition: 0.3s;
+    background-color: orange;
+}
+button#final-new-image-button:hover {
+    background-color: rgb(255, 200, 100);
+}
+
 /*Footer*/
 /*.aboutsection{
     background-color: darkgray;
@@ -213,6 +245,13 @@ button#submit-preview-image-button:hover {
 footer {
     position: static;
     bottom: 0px;
+}
+.about-section-button-container {
+    background-color: none;
+    transition: 0.3s;
+}
+.hover-background {
+    background-color: darkgray;
 }
 #about-section-button {
     display:block;
@@ -224,16 +263,11 @@ footer {
     padding: 10px 20px 0px 20px;
     font-family: inherit;
     font-size: 120%;
-    transition: 0.3s;
-}
-button#about-section-button:hover {
-    background-color: darkgray;
 }
 #down-arrow-image {
     padding-top: 5px;
     width: 25px;
 }
-/* Probably for scripting, change background color of div when button hover*/
 
 .about-section-container {
     display:none; /*flex*/
